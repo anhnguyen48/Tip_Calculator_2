@@ -1,0 +1,16 @@
+<resources>
+    <string name="app_name">Tip Calculator 2</string>
+    <string name="label">Tip Calculator</string>
+    <string name="check_label">Check Amount</string>
+    <string name="num_label">Number of People</string>
+    <string name="tipPer_label">Tip Percentage %</string>
+    <string name="button1">TIP</string>
+    <string name="button2">WEB</string>
+    <string name="button3">DIAL</string>
+    <string name="button4">MAP</string>
+    <string name="secondButton">Go to the Website</string>
+    <string name="totalBill_label">Total Bill</string>
+    <string name="totalPerson_label">Total per Person</string>
+    <string name="totalTip_label">Total Tip</string>
+    <string name="tipPerson_label">Tip per Person</string>
+</resources>

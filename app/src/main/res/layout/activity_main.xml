@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TableLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#CDC5BF"
+    android:shrinkColumns="*"
+    android:stretchColumns="*">
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="22sp"
+        android:background="#FFC0CB">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_span="4"
+            android:layout_weight="1"
+            android:fontFamily="@font/armata"
+            android:gravity="center"
+            android:text="@string/label"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="22sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="#FFC0CB"
+            android:gravity="center"
+            android:padding="15dp"
+            android:text="@string/check_label"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/CheckAmt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="15sp"
+            android:inputType="number|numberDecimal"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="22sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="#FFC0CB"
+            android:gravity="center"
+            android:padding="15sp"
+            android:text="@string/num_label"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/NumPeople"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:inputType="number"
+            android:padding="15sp"
+            android:textSize="20sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="22sp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:layout_weight="2"
+            android:background="#FFC0CB"
+            android:gravity="center"
+            android:padding="15sp"
+            android:text="@string/tipPer_label"
+            android:textStyle="bold"
+            android:textSize="18sp"/>
+
+        <EditText
+            android:id="@+id/TipPer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:gravity="center"
+            android:padding="15sp"
+            android:inputType="number|numberDecimal"
+            android:textStyle="bold"
+            android:textSize="20sp"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_marginTop="22sp">
+
+        <Button
+            android:id="@+id/Calculate"
+            style="@style/ButtonStyle"
+            android:text="@string/button1" />
+
+        <Button
+            android:id="@+id/webButton"
+            style="@style/ButtonStyle"
+            android:text="@string/button2" />
+
+        <Button
+            android:id="@+id/dialButton"
+            style="@style/ButtonStyle"
+            android:text="@string/button3"/>
+
+        <Button
+            android:id="@+id/mapButton"
+            style="@style/ButtonStyle"
+            android:text="MAP"/>
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="37sp"
+        android:layout_marginTop="22sp"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#FFC0CB"
+            android:gravity="center"
+            android:padding="20sp"
+            android:text="@string/totalBill_label"
+            android:textColor="#231A1A"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TotalBill"
+            android:layout_width="180sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#CDC5BF"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:padding="20sp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="180sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#FFC0CB"
+            android:gravity="center"
+            android:padding="20sp"
+            android:text="@string/totalPerson_label"
+            android:textColor="#231A1A"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/BillPeople"
+            android:layout_width="180sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#CDC5BF"
+            android:fontFamily="@font/droid_serif_bold"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:padding="20sp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+    <TableRow
+        android:layout_width="fill_parent"
+        android:layout_height="200sp"
+        android:gravity="center_horizontal"
+        android:layout_marginTop="22sp">
+
+        <TextView
+            android:layout_width="50sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#FFC0CB"
+            android:gravity="center"
+            android:padding="20sp"
+            android:text="@string/totalTip_label"
+            android:textColor="#231A1A"
+            android:textSize="12sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/TotalTip"
+            android:layout_width="180sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#CDC5BF"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:padding="20sp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:layout_width="150sp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/tipPerson_label"
+            android:textSize="12sp"
+            android:padding="20sp"
+            android:layout_span="1"
+            android:background="#FFC0CB"
+            android:textColor="#231A1A"
+            android:textStyle="bold"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/TipPeople"
+            android:layout_width="180sp"
+            android:layout_height="match_parent"
+            android:layout_span="1"
+            android:layout_weight="1"
+            android:background="#CDC5BF"
+            android:gravity="center"
+            android:inputType="number|numberDecimal"
+            android:padding="20sp"
+            android:textColor="#000000"
+            android:textSize="14sp"
+            android:textStyle="bold" />
+
+    </TableRow>
+
+</TableLayout>

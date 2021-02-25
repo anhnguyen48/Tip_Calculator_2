@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:background="#FFEFD5">
+
+    <EditText
+        android:id="@+id/WebURL"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:layout_marginTop="22sp">
+    </EditText>
+
+    <Button
+        android:id="@+id/setWebsite"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="30sp"
+        android:backgroundTint="#FFAEB9"
+        android:text="@string/secondButton"
+        android:textColor="#8B5F65">
+    </Button>
+
+    <WebView
+        android:id="@+id/Web_URL"
+        android:layout_height="wrap_content"
+        android:layout_width="fill_parent"
+        android:layout_marginTop="50sp">
+
+    </WebView>
+
+</LinearLayout>
