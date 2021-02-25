@@ -1,14 +1,18 @@
 /*  Name: Anh Nguyen
-    Date: Feb 6th, 2021
+    Date: Feb 24th, 2021
     Purpose: This is a simple Tip Calculator application. The user would enter Check Amount, Number
-    of People, and Tip Percent (15% is the default). After the "GO!" button is pressed, the app
-    would calculate 4 numbers: Total Bill, Total Tip, Bill per Person, and Tip per Person.
+    of People, and Tip Percent (15% is the default). If "TIP" button is pressed, the app
+    would calculate 4 numbers: Total Bill, Total Tip, Bill per Person, and Tip per Person. If "WEB"
+    is pressed, the app opens a new Activity for web search. If "DIAL" button is pressed, automatically
+    dial 781-891-2000. If "MAP" is pressed, it opens the built-in GoogleMaps application which will
+    automatically display part (or all) of the Bentley campus.
 */
 
 package com.example.tipcal2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.app.Activity;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.KeyEvent;
@@ -34,7 +38,7 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
     private TextView TipPeople; //Amount of Tip paid by each person
 
     private Button Calculate; //Pressing this button will calculate the needed information
-    private WebView Web_URL;
+    public static final int requestCode_48 = 48;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -127,10 +131,12 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
 
     }
 
+
     public void onClick (View v) {
         switch (v.getId()) {
             case R.id.webButton:
-                webScreen(); //run the function webScreen() which opens a new layout
+                Intent i1 = new Intent(this, WebLookUp.class);
+                startActivity(i1); //Open WebLookUp Activity
                 break;
 
             case R.id.dialButton:
@@ -149,39 +155,27 @@ public class MainActivity extends AppCompatActivity implements OnClickListener {
         }
     }
 
+    protected void onActivityResult(int requestCode,
+                                    int resultCode,  Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
 
-    private void webScreen() {
-        setContentView(R.layout.web_screen);
-        EditText WebURL = (EditText) findViewById(R.id.WebURL);
-        WebURL.setHint("Enter URL");
-        Web_URL = (WebView) findViewById(R.id.Web_URL);
-        Web_URL.setWebViewClient(new WebViewClient());
+        switch (requestCode){
+            case (requestCode_48): {
 
-        Button setWebsite = (Button) findViewById(R.id.setWebsite);
-        setWebsite.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                String S_WebURL = WebURL.getText().toString(); //Get the website input from user
-                Web_URL.getSettings().setJavaScriptEnabled(true);
-                Web_URL.loadUrl(S_WebURL);
+                if (resultCode == Activity.RESULT_OK)
+                    Toast.makeText(this, "Result OK", Toast.LENGTH_LONG).show();
+                else
+                    Toast.makeText(this, "Result NOT OK", Toast.LENGTH_LONG).show();
+                break;
             }
-        });
 
-    }
+            default : Toast.makeText(this, "Not my problem", Toast.LENGTH_LONG).show();
+        }//switch
 
-    //Use "back" button to go back to the previous web page. When finishes, the app closes.
-    public boolean onKeyDown(int keyCode, KeyEvent event) {
-        switch (keyCode) {
-            case KeyEvent.KEYCODE_BACK:
-                if (Web_URL.canGoBack()) {
-                    Web_URL.goBack();
-                }
-                else {
-                    finish();
-                }
-                return true;
-        }
-        return super.onKeyDown(keyCode, event);
-    }
+    }// onActivityResult
+
+
+
 
 
 }
